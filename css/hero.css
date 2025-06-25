@@ -54,7 +54,7 @@
             width: 50rem;
             height: 50rem;
             object-fit: cover;
-            filter: grayscale(100%);
+            filter: saturate(140%)
         }
 
         .social-links {
