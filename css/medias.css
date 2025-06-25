@@ -14,6 +14,11 @@
                 flex-direction: column;
                 padding: 100px 20px 50px;
                 text-align: center;
+                height: unset;
+            }
+
+            .hero img {
+                display: none;
             }
 
             .hero-content h1 {
@@ -25,7 +30,7 @@
             }
 
             .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
 
             .social-links {
@@ -38,7 +43,7 @@
 
             .testimonial {
                 flex-direction: column;
-                text-align: center;
+                text-align: left;
             }
 
             .contact-info {

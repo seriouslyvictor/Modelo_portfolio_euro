@@ -33,14 +33,6 @@ const observer = new IntersectionObserver(function (entries) {
     });
 }, observerOptions);
 
-// Observe skill cards and portfolio items
-document.querySelectorAll('.skill-card, .portfolio-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
-});
-
 // Contact button functionality
 document.querySelector('.contact-btn').addEventListener('click', function () {
     document.querySelector('#contact').scrollIntoView({
