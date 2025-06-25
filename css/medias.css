@@ -1,0 +1,48 @@
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 100px 20px 50px;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+
+            .social-links {
+                position: static;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 30px;
+                transform: none;
+            }
+
+            .testimonial {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
