@@ -43,7 +43,9 @@ document.querySelector('.contact-btn').addEventListener('click', function () {
 const flkty = new Flickity('.carousel', {
     // options
     cellAlign: 'left',
-    contain: true
+    contain: true,
+    autoPlay: 4000,
+    wrapAround: true
 });
 
 // Meow balloon for cat logo

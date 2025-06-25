@@ -10,7 +10,6 @@
             border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s ease;
-            cursor: pointer;
         }
 
         .portfolio-item:hover {
@@ -49,4 +48,8 @@
         .btn--ver:hover {
             background: #ffd700;
             color: #000;
+        }
+
+        .portfolio-grid a {
+            color: #fff;
         }
