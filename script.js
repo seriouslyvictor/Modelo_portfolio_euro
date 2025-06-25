@@ -134,3 +134,45 @@ if (typewriter) {
     setTimeout(typeEffect, 1000);
     flickerCursor();
 }
+
+function animationSkillsCard() {
+    const allSkills = document.querySelectorAll('.skill-card');
+    allSkills.forEach(skill => { skill.setAttribute("data-aos", "fade-up") });
+    allSkills.forEach(skill => { skill.setAttribute("data-aos-duration", "500") });
+    allSkills.forEach((skill, i) => { skill.setAttribute("data-aos-delay", `${i * 100}`) });
+}
+
+function animationTimeLine() {
+    const allTimelineItems = document.querySelectorAll('.timeline-item');
+    allTimelineItems.forEach(item => { item.setAttribute("data-aos", "fade-up") });
+    allTimelineItems.forEach(item => { item.setAttribute("data-aos-duration", "500") });
+    allTimelineItems.forEach((item, i) => { item.setAttribute("data-aos-delay", `${i * 100}`) });
+}
+
+function animationPortfolio() {
+    const allPortfolioItems = document.querySelectorAll('.portfolio-item');
+    allPortfolioItems.forEach(item => { item.setAttribute("data-aos", "flip-up") });
+    allPortfolioItems.forEach(item => { item.setAttribute("data-aos-duration", "850") });
+    allPortfolioItems.forEach((item, i) => { item.setAttribute("data-aos-delay", `${i * 200}`) });
+}
+
+function animationSocialIcons() {
+    const allSocialIcons = document.querySelectorAll('.footer-social a');
+    allSocialIcons.forEach(icon => {
+        icon.setAttribute("data-aos", "zoom-in");
+        icon.setAttribute("data-aos-duration", "800");
+    });
+    allSocialIcons.forEach((icon, i) => {
+        icon.setAttribute("data-aos-delay", `${i * 300}`);
+    });
+}
+
+
+window.addEventListener('load', () => {
+    animationSocialIcons();
+    animationPortfolio();
+    animationSkillsCard();
+    animationTimeLine();
+    AOS.init()
+    AOS.refresh()
+});
