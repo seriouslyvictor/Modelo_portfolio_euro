@@ -65,3 +65,78 @@ if (logo && meowBalloon) {
         }, 1500);
     });
 }
+
+// Typewriter effect for the highlight adjectives
+const adjectives = [
+    'estudante de programação',
+    'gateira!',
+    'entusiasta do universo',
+    'pessoa com hábitos noturnos',
+    'k-poper'
+];
+
+// Improved toTitleCase for Portuguese small words
+function toTitleCase(str) {
+    const smallWords = ['de', 'do', 'da', 'dos', 'das', 'com', 'e'];
+    return str.split(' ').map((word, i) => {
+        if (i !== 0 && smallWords.includes(word.toLowerCase())) {
+            return word.toLowerCase();
+        }
+        return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase();
+    }).join(' ');
+}
+
+const typewriter = document.getElementById('typewriter');
+let adjIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let currentText = '';
+let typingSpeed = 80;
+let pauseTime = 2000;
+let cursorVisible = true;
+
+// Add a separate cursor span for flicker
+if (typewriter) {
+    typewriter.innerHTML = '<span id="typewriter-text"></span><span id="typewriter-cursor">|</span>';
+}
+const typewriterText = document.getElementById('typewriter-text');
+const typewriterCursor = document.getElementById('typewriter-cursor');
+
+function typeEffect() {
+    const fullText = toTitleCase(adjectives[adjIndex]);
+    if (isDeleting) {
+        currentText = fullText.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        currentText = fullText.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    if (typewriterText) typewriterText.textContent = currentText;
+
+    if (!isDeleting && charIndex === fullText.length) {
+        setTimeout(() => {
+            isDeleting = true;
+            typeEffect();
+        }, pauseTime);
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        adjIndex = (adjIndex + 1) % adjectives.length;
+        setTimeout(typeEffect, 400);
+    } else {
+        setTimeout(typeEffect, typingSpeed);
+    }
+}
+
+// Flicker the cursor
+function flickerCursor() {
+    if (typewriterCursor) {
+        typewriterCursor.style.opacity = cursorVisible ? '1' : '0';
+        cursorVisible = !cursorVisible;
+    }
+    setTimeout(flickerCursor, 500);
+}
+
+if (typewriter) {
+    setTimeout(typeEffect, 1000);
+    flickerCursor();
+}
