@@ -1,6 +1,6 @@
 # 🎨 Modelo de Portfólio - Camilly
 
-Este repositório serve como um **modelo e guia** para estudantes que desejam criar seus próprios portfólios pessoais. O projeto demonstra como, com conhecimento fundamental de HTML, CSS e JavaScript, aliado ao suporte de LLMs (Large Language Models), é possível criar projetos profissionais e impactantes.
+Este repositório serve como um **modelo e guia** para estudantes que desejam criar seus próprios portfólios pessoais. O projeto demonstra como, com conhecimento fundamental de HTML, CSS e JavaScript, aliado ao suporte de LLMs (Large Language Models), é possível criar projetos com qualidade profissional.
 
 ## 🎯 Objetivo
 
